@@ -1,0 +1,405 @@
+/* ===========================
+   Google Font & Reset
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#0F172A;
+    color:#F8FAFC;
+    min-height:100vh;
+}
+
+/* ===========================
+   Container
+=========================== */
+
+.container{
+    width:95%;
+    margin:auto;
+    padding:25px;
+}
+
+/* ===========================
+   Navbar
+=========================== */
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.logo i{
+    font-size:32px;
+    color:#3B82F6;
+}
+
+.logo h2{
+    font-weight:600;
+}
+
+.theme-btn{
+    width:45px;
+    height:45px;
+    border:none;
+    border-radius:12px;
+    background:#1E293B;
+    color:white;
+    cursor:pointer;
+    font-size:18px;
+}
+
+/* ===========================
+   Dashboard
+=========================== */
+
+.dashboard{
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr;
+
+    gap:20px;
+
+}
+
+/* ===========================
+   Cards
+=========================== */
+
+.card{
+
+    background:#1E293B;
+
+    border-radius:18px;
+
+    padding:20px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.35);
+
+}
+
+.card-header{
+
+    margin-bottom:18px;
+
+}
+
+.card-header h3{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    color:#CBD5E1;
+
+}
+
+/* ===========================
+   Camera
+=========================== */
+
+.camera-preview{
+
+    height:340px;
+
+    background:#0B1220;
+
+    border:2px dashed #334155;
+
+    border-radius:15px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+.camera-preview i{
+
+    font-size:60px;
+
+    color:#3B82F6;
+
+}
+
+/* ===========================
+   Status
+=========================== */
+
+.status{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    font-size:18px;
+
+}
+
+.online{
+
+    width:14px;
+
+    height:14px;
+
+    border-radius:50%;
+
+    background:#22C55E;
+
+}
+
+/* ===========================
+   Gesture
+=========================== */
+
+.gesture-box{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    height:180px;
+
+}
+
+.gesture-box{
+
+    font-size:60px;
+
+}
+
+.gesture-box h1{
+
+    margin-top:10px;
+
+}
+
+/* ===========================
+   Translation
+=========================== */
+
+.translation{
+
+    font-size:18px;
+
+    line-height:32px;
+
+}
+
+/* ===========================
+   Progress
+=========================== */
+
+.progress-bar{
+
+    width:100%;
+
+    height:14px;
+
+    background:#334155;
+
+    border-radius:30px;
+
+    overflow:hidden;
+
+    margin:15px 0;
+
+}
+
+.progress{
+
+    width:98%;
+
+    height:100%;
+
+    background:#3B82F6;
+
+}
+
+/* ===========================
+   Buttons
+=========================== */
+
+.controls-card{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:15px;
+
+}
+
+.controls-card button{
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+    font-weight:500;
+
+    color:white;
+
+    transition:.3s;
+
+}
+
+#start{
+
+    background:#22C55E;
+
+}
+
+#stop{
+
+    background:#EF4444;
+
+}
+
+#speak{
+
+    background:#3B82F6;
+
+}
+
+#clear{
+
+    background:#F59E0B;
+
+}
+
+.controls-card button:hover{
+
+    transform:translateY(-3px);
+
+}
+
+/* ===========================
+   Language
+=========================== */
+
+.language-card select{
+
+    width:100%;
+
+    padding:12px;
+
+    background:#0B1220;
+
+    color:white;
+
+    border:none;
+
+    border-radius:10px;
+
+}
+
+/* ===========================
+   Footer
+=========================== */
+
+footer{
+
+    margin-top:30px;
+
+    text-align:center;
+
+    color:#94A3B8;
+
+}
+
+footer span{
+
+    color:#3B82F6;
+
+}
+
+/* ===========================
+   Responsive
+=========================== */
+
+@media(max-width:900px){
+
+.dashboard{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+/* ===========================
+   Light Theme
+=========================== */
+
+body.light{
+
+    background:#E2E8F0;
+
+    color:#0F172A;
+
+}
+
+body.light .card{
+
+    background:white;
+
+    color:#0F172A;
+
+}
+
+body.light .theme-btn{
+
+    background:#CBD5E1;
+
+    color:#0F172A;
+
+}
+
+body.light .camera-preview{
+
+    background:#F1F5F9;
+
+}
+
+body.light select{
+
+    background:white;
+
+    color:black;
+
+}

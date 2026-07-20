@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>AI Sign Language Translator</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- CSS -->
+
+    <link rel="stylesheet"
+          href="style.css">
+
+</head>
+
+<body>
+
+    <!-- Background -->
+
+    <div class="background"></div>
+
+    <!-- Main Container -->
+
+    <div class="container">
+
+        <!-- ================= NAVBAR ================= -->
+
+        <nav>
+
+            <div class="logo">
+
+                <i class="fa-solid fa-hands"></i>
+
+                <h2>AI Sign Language Translator</h2>
+
+            </div>
+
+            <div class="nav-right">
+
+                <button class="theme-btn">
+
+                    <i class="fa-solid fa-moon"></i>
+
+                </button>
+
+            </div>
+
+        </nav>
+
+        <!-- ================ DASHBOARD ================ -->
+
+        <main class="dashboard">
+
+            <!-- Camera -->
+
+            <section class="card camera-card">
+
+                <div class="card-header">
+
+                    <h3>
+
+                        <i class="fa-solid fa-camera"></i>
+
+                        Live Camera
+
+                    </h3>
+
+                </div>
+
+                <div class="camera-preview">
+
+                    <i class="fa-solid fa-video"></i>
+
+                    <p>Camera Preview</p>
+
+                </div>
+
+            </section>
+
+            <!-- AI Status -->
+
+            <section class="card status-card">
+
+                <div class="card-header">
+
+                    <h3>
+
+                        <i class="fa-solid fa-robot"></i>
+
+                        AI Status
+
+                    </h3>
+
+                </div>
+
+                <div class="status">
+
+                    <span class="online"></span>
+
+                    Ready
+
+                </div>
+
+            </section>
+
+            <!-- Gesture -->
+
+            <section class="card gesture-card">
+
+                <div class="card-header">
+
+                    <h3>
+
+                        <i class="fa-solid fa-hand"></i>
+
+                        Detected Gesture
+
+                    </h3>
+
+                </div>
+
+                <div class="gesture-box">
+
+                    👋
+
+                    <h1>HELLO</h1>
+
+                </div>
+
+            </section>
+
+            <!-- Translation -->
+
+            <section class="card translation-card">
+
+                <div class="card-header">
+
+                    <h3>
+
+                        <i class="fa-solid fa-language"></i>
+
+                        Translation
+
+                    </h3>
+
+                </div>
+
+                <div class="translation">
+
+                    Hello! Welcome to AI Sign Language Translator.
+
+                </div>
+
+            </section>
+
+            <!-- Confidence -->
+
+            <section class="card confidence-card">
+
+                <div class="card-header">
+
+                    <h3>
+
+                        <i class="fa-solid fa-chart-simple"></i>
+
+                        Confidence
+
+                    </h3>
+
+                </div>
+
+                <div class="progress-bar">
+
+                    <div class="progress"></div>
+
+                </div>
+
+                <p>98%</p>
+
+            </section>
+
+            <!-- Controls -->
+
+            <section class="card controls-card">
+
+                <button id="start">
+
+                    <i class="fa-solid fa-play"></i>
+
+                    Start Camera
+
+                </button>
+
+                <button id="stop">
+
+                    <i class="fa-solid fa-stop"></i>
+
+                    Stop
+
+                </button>
+
+                <button id="speak">
+
+                    <i class="fa-solid fa-volume-high"></i>
+
+                    Speak
+
+                </button>
+
+                <button id="clear">
+
+                    <i class="fa-solid fa-trash"></i>
+
+                    Clear
+
+                </button>
+
+            </section>
+
+            <!-- Language -->
+
+            <section class="card language-card">
+
+                <div class="card-header">
+
+                    <h3>
+
+                        <i class="fa-solid fa-globe"></i>
+
+                        Language
+
+                    </h3>
+
+                </div>
+
+                <select>
+
+                    <option>English</option>
+                    <option>Hindi</option>
+                    <option>Telugu</option>
+                    <option>Tamil</option>
+
+                </select>
+
+            </section>
+
+        </main>
+
+        <!-- Footer -->
+
+        <footer>
+
+            Powered by
+
+            <span>OpenCV</span>
+
+            •
+
+            <span>MediaPipe</span>
+
+            •
+
+            <span>TensorFlow</span>
+
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
