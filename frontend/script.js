@@ -1,3 +1,29 @@
+const video = document.getElementById("video");
+
+async function startCamera(){
+
+    try{
+
+        const stream = await navigator.mediaDevices.getUserMedia({
+
+            video:true,
+            audio:false
+
+        });
+
+        video.srcObject = stream;
+
+    }
+
+    catch(error){
+
+        alert("Unable to access camera.");
+
+        console.error(error);
+
+    }
+
+}
 // ===============================
 // Theme Toggle
 // ===============================
@@ -38,7 +64,7 @@ const translation=document.querySelector(".translation");
 
 startBtn.onclick=()=>{
 
-    alert("Camera will start in Phase 2.");
+    startCamera();
 
 };
 
@@ -47,7 +73,15 @@ startBtn.onclick=()=>{
 
 stopBtn.onclick=()=>{
 
-    alert("Camera stopped.");
+    const stream = video.srcObject;
+
+    if(stream){
+
+        stream.getTracks().forEach(track=>track.stop());
+
+        video.srcObject = null;
+
+    }
 
 };
 

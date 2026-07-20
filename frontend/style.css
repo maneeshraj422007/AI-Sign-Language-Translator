@@ -116,31 +116,27 @@ nav{
 
 .camera-preview{
 
+    width:100%;
     height:340px;
 
-    background:#0B1220;
-
-    border:2px dashed #334155;
+    overflow:hidden;
 
     border-radius:15px;
 
+    background:black;
+
     display:flex;
-
-    flex-direction:column;
-
     justify-content:center;
-
     align-items:center;
-
-    gap:15px;
 
 }
 
-.camera-preview i{
+.camera-preview video{
 
-    font-size:60px;
+    width:100%;
+    height:100%;
 
-    color:#3B82F6;
+    object-fit:cover;
 
 }
 
