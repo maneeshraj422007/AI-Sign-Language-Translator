@@ -5,8 +5,15 @@ camera = cv2.VideoCapture(0)
 
 detector = HandDetector()
 
+latest_prediction = {
+    "gesture": "--",
+    "confidence": 0
+}
+
 
 def generate_frames():
+
+    global latest_prediction
 
     while True:
 
@@ -15,15 +22,24 @@ def generate_frames():
         if not success:
             break
 
-        frame = detector.detect(frame)
+        frame, landmarks = detector.detect(frame)
+
+        # Temporary prediction
+        if landmarks:
+
+            latest_prediction["gesture"] = "Hand Detected"
+            latest_prediction["confidence"] = 100
+
+        else:
+
+            latest_prediction["gesture"] = "No Hand"
+            latest_prediction["confidence"] = 0
 
         _, buffer = cv2.imencode(".jpg", frame)
-
-        frame = buffer.tobytes()
 
         yield (
             b'--frame\r\n'
             b'Content-Type: image/jpeg\r\n\r\n'
-            + frame +
+            + buffer.tobytes() +
             b'\r\n'
         )
