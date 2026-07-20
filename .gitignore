@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environment
+venv/
+
+# VS Code
+.vscode/
+
+# Environment variables
+.env
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Model artifacts
+*.h5
+*.keras
+*.ckpt
+*.pb
+
+# Dataset cache
+datasets/cache/
+
+# Build files
+dist/
+build/
+
+# Coverage
+.coverage
+htmlcov/
