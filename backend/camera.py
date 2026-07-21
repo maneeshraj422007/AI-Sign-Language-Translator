@@ -1,3 +1,4 @@
+from predictor import predict
 import cv2
 from hand_detector import HandDetector
 
@@ -22,13 +23,15 @@ def generate_frames():
         if not success:
             break
 
-        frame, landmarks = detector.detect(frame)
+        frame, features = detector.detect(frame)
 
         # Temporary prediction
-        if landmarks:
+        if len(features) == 63:
 
-            latest_prediction["gesture"] = "Hand Detected"
-            latest_prediction["confidence"] = 100
+            gesture, confidence = predict(features)
+
+            latest_prediction["gesture"] = gesture
+            latest_prediction["confidence"] = confidence
 
         else:
 
