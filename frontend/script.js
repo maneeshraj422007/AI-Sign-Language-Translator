@@ -64,15 +64,25 @@ function stopCamera(){
 // Clear Results
 // ==========================================
 
-function clearResults(){
+async function clearResults() {
 
-    gesture.innerHTML = "--";
+    try {
 
-    translation.innerHTML = "Waiting...";
+        await fetch(BACKEND_URL + "/clear");
 
-    confidence.innerHTML = "0%";
+        gesture.innerHTML = "--";
 
-    confidenceBar.style.width = "0%";
+        translation.innerHTML = "";
+
+        confidence.innerHTML = "0%";
+
+        confidenceBar.style.width = "0%";
+
+    } catch (error) {
+
+        console.log(error);
+
+    }
 
 }
 
@@ -80,42 +90,29 @@ function clearResults(){
 // Speak Translation
 // ==========================================
 
-function speakTranslation(){
+function speakTranslation() {
 
-    if(translation.innerHTML==="Waiting...")
+    const text = translation.innerHTML.trim();
+
+    if (text === "") {
+        alert("No sentence available to speak.");
         return;
-
-    const speech = new SpeechSynthesisUtterance(
-        translation.innerHTML
-    );
-
-    speech.lang = "en-US";
-
-    switch(language.value){
-
-        case "Hindi":
-            speech.lang="hi-IN";
-            break;
-
-        case "Telugu":
-            speech.lang="te-IN";
-            break;
-
-        case "Tamil":
-            speech.lang="ta-IN";
-            break;
-
-        case "Kannada":
-            speech.lang="kn-IN";
-            break;
-
-        default:
-            speech.lang="en-US";
     }
+
+    window.speechSynthesis.cancel();
+
+    const speech = new SpeechSynthesisUtterance(text);
+
+    const selectedLanguage =
+        document.getElementById("language").value;
+
+    speech.lang = selectedLanguage;
 
     speech.rate = 1;
 
     speech.pitch = 1;
+
+    speech.volume = 1;
 
     window.speechSynthesis.speak(speech);
 
@@ -158,17 +155,20 @@ async function getPrediction() {
 
         const data = await response.json();
 
+        // Current gesture
         gesture.innerHTML = data.gesture;
 
-        translation.innerHTML = data.gesture;
+        // Complete translated sentence
+        translation.innerHTML = data.sentence || "";
 
-        confidence.innerHTML = data.confidence + "%";
+        // Confidence
+        confidence.innerHTML = data.confidence.toFixed(2) + "%";
 
         confidenceBar.style.width = data.confidence + "%";
 
     } catch (error) {
 
-        console.error(error);
+        console.log(error);
 
     }
 
